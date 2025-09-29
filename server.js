@@ -45,6 +45,7 @@ app.post("/send-otp", async (req, res) => {
 // Verify OTP API
 app.post("/verify-otp", (req, res) => {
     console.log("Verfiy otp is run");
+    console.log("req.body",req?.body)
   try {
     const { contact, otp } = req.body;
     if (!contact || !otp) return res.status(400).json({ error: "Contact & OTP required" });
